@@ -1,0 +1,51 @@
+# Test your FastAPI endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/hello/User
+Accept: application/json
+
+###
+
+# OpenAI-compatible endpoints
+
+GET http://127.0.0.1:8000/
+Accept: application/json
+
+###
+
+GET http://127.0.0.1:8000/v1/models
+Accept: application/json
+
+###
+
+POST http://127.0.0.1:8000/v1/chat/completions
+Content-Type: application/json
+Accept: application/json
+
+{
+  "model": "local-chat",
+  "messages": [
+    {"role": "system", "content": "You are a helpful assistant."},
+    {"role": "user", "content": "Say hello in Chinese."}
+  ],
+  "stream": false,
+  "max_tokens": 64
+}
+
+###
+
+POST http://127.0.0.1:8000/v1/audio/speech
+Content-Type: application/json
+
+{
+  "model": "local-audio",
+  "input": "你好，我是本地语音合成。",
+  "voice": "Ting-Ting",
+  "format": "wav"
+}
+
+###
