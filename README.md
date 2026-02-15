@@ -295,32 +295,6 @@ curl http://127.0.0.1:8000/v1/audio/speech \
 
 ---
 
-## ❓ FAQ
-
-<details>
-  <summary><strong>为什么输出里会出现 <code>user:</code> / <code>assistant:</code> 或重复对话？</strong></summary>
-
-不同模型的 chat template 不同。本项目会优先使用 tokenizer 的 `apply_chat_template()`，并在输出后做基础剥离/截断。
-如果仍出现残留，可以在 `app/engine/mlx_engine.py` 的 `_post_process()` 增加你的模型特定规则。
-
-</details>
-
-<details>
-  <summary><strong><code>mlx-lm</code> 参数名不兼容（temp/top_p/temperature）怎么办？</strong></summary>
-
-本项目会在运行时做一次最小探测生成来判断支持哪些采样参数，并缓存结果避免请求 500。
-
-</details>
-
-<details>
-  <summary><strong>TTS 为什么不支持 <code>AUDIO_MODEL_PATH</code>？</strong></summary>
-
-当前 TTS 默认使用 macOS `say`；`AUDIO_MODEL_PATH` 已预留，后续可以接入真实 TTS 模型（MLX / Piper / Coqui 等）。
-
-</details>
-
----
-
 ## ✅ 测试
 
 ```bash
