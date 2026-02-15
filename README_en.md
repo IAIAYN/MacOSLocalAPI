@@ -58,15 +58,6 @@ Wrap local models into an **OpenAI-style API** (Chat + TTS) on macOS, so any Ope
 
 ---
 
-## Architecture (simple)
-
-Client → FastAPI → ModelRegistry → Engines
-
-- Routes are OpenAI-compatible under `/v1/*`
-- `model` selects an engine via `ModelRegistry` (chat vs audio)
-
----
-
 ## Features
 
 - **Chat**: `POST /v1/chat/completions`
