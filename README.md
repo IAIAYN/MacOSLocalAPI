@@ -81,7 +81,6 @@
   - [Audio Speech (TTS)](#audio-speech-tts)
 - [SDK 使用示例](#-sdk-使用示例)
 - [项目结构](#-项目结构)
-- [FAQ](#-faq)
 
 ---
 
